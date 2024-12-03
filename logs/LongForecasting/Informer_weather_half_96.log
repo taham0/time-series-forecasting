@@ -1,0 +1,38 @@
+Args in experiment:
+Namespace(activation='gelu', batch_size=32, c_out=21, checkpoints='./checkpoints/', d_ff=2048, d_layers=1, d_model=512, data='custom', data_path='weather_half.csv', dec_in=21, des='Exp', devices='0,1,2,3', distil=True, do_predict=False, dropout=0.05, e_layers=2, embed='timeF', embed_type=0, enc_in=21, factor=3, features='M', freq='h', gpu=0, individual=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='mse', lradj='type1', model='Informer', model_id='weather_96_96', moving_avg=25, n_heads=8, num_workers=10, output_attention=False, patience=3, pred_len=96, root_path='./dataset/', seq_len=96, target='OT', test_flop=False, train_epochs=2, train_only=False, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : weather_96_96_Informer_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 18252
+val 2541
+test 5174
+	iters: 100, epoch: 1 | loss: 1.0310013
+	speed: 0.0673s/iter; left time: 70.0234s
+	iters: 200, epoch: 1 | loss: 0.7331586
+	speed: 0.0603s/iter; left time: 56.7206s
+	iters: 300, epoch: 1 | loss: 0.3283374
+	speed: 0.0616s/iter; left time: 51.7675s
+	iters: 400, epoch: 1 | loss: 1.1927488
+	speed: 0.0612s/iter; left time: 45.3407s
+	iters: 500, epoch: 1 | loss: 0.3450346
+	speed: 0.0594s/iter; left time: 38.1071s
+Epoch: 1 cost time: 35.51505494117737
+Epoch: 1, Steps: 570 | Train Loss: 0.4656191 Vali Loss: 0.7820268 Test Loss: 2.5578060
+Validation loss decreased (inf --> 0.782027).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.8983995
+	speed: 0.1839s/iter; left time: 86.5935s
+	iters: 200, epoch: 2 | loss: 0.3205537
+	speed: 0.0596s/iter; left time: 22.0963s
+	iters: 300, epoch: 2 | loss: 0.2688902
+	speed: 0.0625s/iter; left time: 16.9465s
+	iters: 400, epoch: 2 | loss: 0.3021052
+	speed: 0.0587s/iter; left time: 10.0380s
+	iters: 500, epoch: 2 | loss: 0.6631468
+	speed: 0.0621s/iter; left time: 4.4070s
+Epoch: 2 cost time: 35.425740003585815
+Epoch: 2, Steps: 570 | Train Loss: 0.3476015 Vali Loss: 0.8229412 Test Loss: 3.0330734
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 5e-05
+>>>>>>>testing : weather_96_96_Informer_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 5174
+mse:2.5565836429595947, mae:0.9193557500839233

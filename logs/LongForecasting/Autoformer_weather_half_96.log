@@ -1,0 +1,38 @@
+Args in experiment:
+Namespace(activation='gelu', batch_size=32, c_out=21, checkpoints='./checkpoints/', d_ff=2048, d_layers=1, d_model=512, data='custom', data_path='weather_half.csv', dec_in=21, des='Exp', devices='0,1,2,3', distil=True, do_predict=False, dropout=0.05, e_layers=2, embed='timeF', embed_type=0, enc_in=21, factor=3, features='M', freq='h', gpu=0, individual=False, is_training=1, itr=1, label_len=48, learning_rate=0.0001, loss='mse', lradj='type1', model='Autoformer', model_id='weather_96_96', moving_avg=25, n_heads=8, num_workers=10, output_attention=False, patience=3, pred_len=96, root_path='./dataset/', seq_len=96, target='OT', test_flop=False, train_epochs=2, train_only=False, use_amp=False, use_gpu=True, use_multi_gpu=False)
+Use GPU: cuda:0
+>>>>>>>start training : weather_96_96_Autoformer_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 18252
+val 2541
+test 5174
+	iters: 100, epoch: 1 | loss: 0.6902863
+	speed: 0.0838s/iter; left time: 87.2464s
+	iters: 200, epoch: 1 | loss: 0.6528753
+	speed: 0.0805s/iter; left time: 75.7944s
+	iters: 300, epoch: 1 | loss: 0.4537357
+	speed: 0.0830s/iter; left time: 69.8082s
+	iters: 400, epoch: 1 | loss: 0.6944686
+	speed: 0.0814s/iter; left time: 60.3327s
+	iters: 500, epoch: 1 | loss: 0.5346730
+	speed: 0.0764s/iter; left time: 48.9785s
+Epoch: 1 cost time: 46.42979073524475
+Epoch: 1, Steps: 570 | Train Loss: 0.6454293 Vali Loss: 1.0502955 Test Loss: 1.5937029
+Validation loss decreased (inf --> 1.050295).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.3592860
+	speed: 0.2736s/iter; left time: 128.8536s
+	iters: 200, epoch: 2 | loss: 0.4043032
+	speed: 0.0820s/iter; left time: 30.4165s
+	iters: 300, epoch: 2 | loss: 0.4826859
+	speed: 0.0763s/iter; left time: 20.6896s
+	iters: 400, epoch: 2 | loss: 0.4414342
+	speed: 0.0756s/iter; left time: 12.9324s
+	iters: 500, epoch: 2 | loss: 0.4459576
+	speed: 0.0764s/iter; left time: 5.4262s
+Epoch: 2 cost time: 44.95164513587952
+Epoch: 2, Steps: 570 | Train Loss: 0.5059571 Vali Loss: 0.9714472 Test Loss: 1.5536687
+Validation loss decreased (1.050295 --> 0.971447).  Saving model ...
+Updating learning rate to 5e-05
+>>>>>>>testing : weather_96_96_Autoformer_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 5174
+mse:1.5530405044555664, mae:0.686741828918457
